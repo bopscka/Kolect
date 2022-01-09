@@ -9,19 +9,22 @@ import { RouterModule } from '@angular/router';
 import { PublicModule } from './public/public.module';
 import { HelpComponent } from './help/help.component';
 import {MatCardModule} from '@angular/material/card';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
+import { SidenavComponent } from './secure/sidenav/sidenav.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
     SecureComponent,
     HelpComponent,
-    DashboardComponent,
+    SidenavComponent,
   ],
   imports: [
     HttpClientModule,
@@ -35,7 +38,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    LayoutModule
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    ChartsModule
     
   ],
   providers: [],
