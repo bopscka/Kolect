@@ -13,13 +13,13 @@ return [
     |
     */
 
-    // 'defaults' => [
-    //     'guard' => 'web',
-    //     'passwords' => 'users',
-    // ],
+    'defaults' => [
+        'guard' => 'web',
+        'passwords' => 'users',
+    ],
 
     /*
-    |--------------------------------   ------------------------------------------
+    |--------------------------------------------------------------------------
     | Authentication Guards
     |--------------------------------------------------------------------------
     |
@@ -40,12 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-
         'api' => [
-            'driver' => 'passport',
+            'driver' => 'passport', // This should be the erroring line, in Illuminate\Auth\AuthManager it checks for the existence of a method 'create'.ucfirst($config['driver']).'Driver' which does not exist
             'provider' => 'users',
+            'hash' => false,
         ],
-
     ],
 
     /*

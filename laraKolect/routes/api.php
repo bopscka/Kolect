@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +14,16 @@ use App\Http\Controllers\UserController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+// $this->routes(function(){
 
+//     Route::middleware(middleware:'api')
+//         ->namespace($this->namespace)
+//         ->group(base_path(path:'routes/api.php'));
 
+// });
 
-Route::get('/', "App\Http\Controllers\UserController@index");
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::get('/', '\App\Http\Controllers\UserController@index');
