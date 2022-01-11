@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         console.log("Requete effectue avec succes");
         console.log(result);
         localStorage.setItem('token', result.access_token);
-        this.router.navigateByUrl('/secure');
+        this.router.navigateByUrl('/Home');
         
       },
 

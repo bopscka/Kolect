@@ -19,15 +19,20 @@ import { SidenavComponent } from './secure/sidenav/sidenav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { NgChartsModule } from 'ng2-charts';
+import { DashboardComponent } from './secure/dashboard/dashboard.component';
+import { SecureModule } from './secure/secure.module';
+import { PublicComponent } from './public/public.component';
 @NgModule({
   declarations: [
     AppComponent,
     SecureComponent,
-    HelpComponent,
-    SidenavComponent,
+    PublicComponent,
+    HelpComponent
   ],
   imports: [
     HttpClientModule,
+    SecureModule,
     PublicModule,
     RouterModule,
     BrowserModule,
@@ -42,7 +47,7 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    ChartsModule
+    NgChartsModule
     
   ],
   providers: [],

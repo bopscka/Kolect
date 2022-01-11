@@ -6,16 +6,17 @@ import { map, shareReplay } from 'rxjs/operators';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css']
+  styleUrls: ['./sidenav.component.css'],
 })
-export class SidenavComponent {
 
+export class SidenavComponent {
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
-
+  menuItems = ['dashboard', 'nouveau', "innacheves", 'statistiques', "plan", 'accomplis', "profil"];
+  constructor(private breakpointObserver: BreakpointObserver) {
+  }
 }
